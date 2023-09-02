@@ -27,12 +27,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'abcskldjskdj')
 DEBUG = bool(int(os.environ.get('DEBUG', "1")))
 
 ALLOWED_HOSTS = []
-ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS', 'load-optimisation.maherdev.com')
+ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS', 'load-optimisation.maherdev.com,localhost')
 if ALLOWED_HOSTS_ENV:
     ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
 
 CSRF_TRUSTED_ORIGINS = []
-CSRF_TRUSTED_ORIGINS_ENV = os.environ.get('CSRF_TRUSTED_ORIGINS', 'http://load-optimisation.maherdev.com')
+CSRF_TRUSTED_ORIGINS_ENV = os.environ.get('CSRF_TRUSTED_ORIGINS', 'http://load-optimisation.maherdev.com,http://localhost:8000')
 if CSRF_TRUSTED_ORIGINS_ENV:
     CSRF_TRUSTED_ORIGINS.extend(CSRF_TRUSTED_ORIGINS_ENV.split(','))
 
