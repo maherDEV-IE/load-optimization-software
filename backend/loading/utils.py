@@ -63,8 +63,7 @@ def _validate_truck_subsets(cargos, trucks):
     for subset in truck_subsets:
         trucks_volume, trucks_weight = _truck_subset_volume_weight(subset)
 
-        # if trucks_volume >= cargo_volume and trucks_weight >= cargo_weight:
-        if True:
+        if trucks_volume >= cargo_volume and trucks_weight >= cargo_weight:
             valid_subsets += (subset,)
     return valid_subsets
 
@@ -105,14 +104,17 @@ def _truck_subst_volume(trucks_subset):
 
 def optimize_loading_trucks(cargos, trucks):
     valid_subsets = _validate_truck_subsets(cargos, trucks)
+    
     optimal_truck_subset_volume = None
+    optimal_truck_subset_packer = None
     for subset in valid_subsets:
         packer = _load_subset(cargos, subset)
         if _valid_solution(packer):
             truck_subset_volume = _truck_subst_volume(subset)
             if optimal_truck_subset_volume==None or truck_subset_volume < optimal_truck_subset_volume:
                 optimal_truck_subset_volume = truck_subset_volume
-    return(packer)
+                optimal_truck_subset_packer = packer
+    return(optimal_truck_subset_packer)
 
 def optimize_loading_one(cargos, trucks):
     bin = optimize_loading_one_truck(cargos, trucks)
