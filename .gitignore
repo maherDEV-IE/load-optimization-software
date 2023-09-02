@@ -16,8 +16,8 @@ build/
 dist/
 
 # Ignore environment files
-.env
-*.env
+# .env
+.prod.env
 
 # Ignore Docker-related files
 *.log
