@@ -26,7 +26,3 @@ dist/
 # Ignore local development files
 .vscode/
 .idea/
-
-# Ignore package lock files
-package-lock.json
-yarn.lock
