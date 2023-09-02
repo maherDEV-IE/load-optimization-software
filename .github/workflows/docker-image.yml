@@ -15,10 +15,11 @@ jobs:
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Build and Push Docker Images
-        run: |
-          docker-compose -f docker-compose.dev.yml build
-          docker-compose -f docker-compose.dev.yml push
+      - name: Build Docker Images
+        run: docker-compose -f docker-compose.dev.yml build
+
+      - name: Push Docker Images
+        run: docker-compose -f docker-compose.dev.yml push
 
       - name: Logout from Docker Hub
         run: docker logout
