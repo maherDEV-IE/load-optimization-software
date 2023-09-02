@@ -1,0 +1,27 @@
+version: "3"
+services:
+  backend:
+    image: maheramara/load-optimisation-backend
+    restart: unless-stopped
+    entrypoint: ['/app/scripts/entrypoint.dev.sh']
+
+  frontend:
+    image: maheramara/load-optimisation-frontend
+    restart: unless-stopped
+    command: npm run dev
+    depends_on:
+      - backend
+
+  nginx:
+    image: maheramara/load-optimisation-web
+    restart: unless-stopped
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - default
+      - nginx-proxy-manager_net
+
+networks:
+  nginx-proxy-manager_net:
+    external: true

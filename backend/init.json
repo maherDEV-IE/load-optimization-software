@@ -1,0 +1,229 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$blmbD7E7l54U0kQ0257mfO$3B9fOkIAWWGVNDbdPc8CrJBQR+9fEXZjEjICKdulhVk=",
+            "last_login": "2023-08-27T15:46:05.111Z",
+            "is_superuser": true,
+            "username": "app",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-08-27T15:45:42.606Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 1,
+        "fields": {
+            "truck_type": "1_ton_side_grill",
+            "max_weight": "1000",
+            "length": "2.00",
+            "width": "1.10",
+            "height": "1.00"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 2,
+        "fields": {
+            "truck_type": "1_ton_box",
+            "max_weight": "1000",
+            "length": "2.00",
+            "width": "1.10",
+            "height": "1.10"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 3,
+        "fields": {
+            "truck_type": "3_ton_side_grill",
+            "max_weight": "3000",
+            "length": "4.00",
+            "width": "1.85",
+            "height": "1.80"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 4,
+        "fields": {
+            "truck_type": "3_ton_box",
+            "max_weight": "3000",
+            "length": "4.00",
+            "width": "1.85",
+            "height": "1.70"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 5,
+        "fields": {
+            "truck_type": "7_ton_side_grill",
+            "max_weight": "7000",
+            "length": "6.00",
+            "width": "2.40",
+            "height": "1.85"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 6,
+        "fields": {
+            "truck_type": "7_ton_box",
+            "max_weight": "7000",
+            "length": "6.00",
+            "width": "2.40",
+            "height": "1.70"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 7,
+        "fields": {
+            "truck_type": "10_ton_side_grill",
+            "max_weight": "10000",
+            "length": "7.00",
+            "width": "2.40",
+            "height": "1.85"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 8,
+        "fields": {
+            "truck_type": "10_ton_box",
+            "max_weight": "10000",
+            "length": "7.00",
+            "width": "2.40",
+            "height": "1.75"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 9,
+        "fields": {
+            "truck_type": "12m_flatbed_box",
+            "max_weight": "21000",
+            "length": "11.50",
+            "width": "2.45",
+            "height": "1.75"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 10,
+        "fields": {
+            "truck_type": "12m_flatbed_open",
+            "max_weight": "21000",
+            "length": "11.50",
+            "width": "2.45",
+            "height": "1.85"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 11,
+        "fields": {
+            "truck_type": "12m_flatbed_side_grill",
+            "max_weight": "21000",
+            "length": "11.50",
+            "width": "2.45",
+            "height": "1.85"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 12,
+        "fields": {
+            "truck_type": "13.60m_flatbed_side_grill",
+            "max_weight": "21000",
+            "length": "13.00",
+            "width": "2.45",
+            "height": "1.85"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 13,
+        "fields": {
+            "truck_type": "13.60m_side_curtain",
+            "max_weight": "18000",
+            "length": "13.00",
+            "width": "2.45",
+            "height": "1.75"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 14,
+        "fields": {
+            "truck_type": "13.60m_box",
+            "max_weight": "18000",
+            "length": "13.00",
+            "width": "2.45",
+            "height": "1.75"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 15,
+        "fields": {
+            "truck_type": "15.60m_side_curtain",
+            "max_weight": "18000",
+            "length": "14.25",
+            "width": "2.45",
+            "height": "1.75"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 16,
+        "fields": {
+            "truck_type": "15.60m_box",
+            "max_weight": "18000",
+            "length": "14.25",
+            "width": "2.45",
+            "height": "1.75"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 17,
+        "fields": {
+            "truck_type": "15.60m_side_grill",
+            "max_weight": "18000",
+            "length": "14.25",
+            "width": "2.45",
+            "height": "1.85"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 18,
+        "fields": {
+            "truck_type": "14m_low_bed",
+            "max_weight": "50000",
+            "length": "14.00",
+            "width": "3.00",
+            "height": "4.50"
+        }
+    },
+    {
+        "model": "truck.truck",
+        "pk": 19,
+        "fields": {
+            "truck_type": "12m_double_axle_heavy_duty",
+            "max_weight": "28000",
+            "length": "14.25",
+            "width": "2.45",
+            "height": "1.75"
+        }
+    }
+]

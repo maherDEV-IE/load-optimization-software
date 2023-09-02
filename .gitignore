@@ -1,0 +1,32 @@
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore compiled Python files
+__pycache__/
+
+# Ignore database files
+db.sqlite3
+
+# Ignore node_modules directory
+frontend/node_modules/
+
+# Ignore build artifacts
+build/
+dist/
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore Docker-related files
+*.log
+.dockerignore
+
+# Ignore local development files
+.vscode/
+.idea/
+
+# Ignore package lock files
+package-lock.json
+yarn.lock

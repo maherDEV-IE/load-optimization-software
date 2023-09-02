@@ -1,0 +1,37 @@
+version: "3"
+services:
+  backend:
+    image: maheramara/load-optimisation-backend
+    restart: unless-stopped
+    build:
+      context: ./backend
+    entrypoint: ['/app/scripts/entrypoint.dev.sh']
+    volumes:
+      - ./backend:/app
+    env_file:
+      - ./.env
+
+  frontend:
+    image: maheramara/load-optimisation-frontend
+    restart: unless-stopped
+    build:
+      context: ./frontend
+      target: dev
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    env_file:
+      - ./.env
+
+  nginx:
+    image: maheramara/load-optimisation-web
+    restart: unless-stopped
+    build:
+      context: ./nginx
+    ports:
+      - "8000:8000"
+    depends_on:
+      - backend
+      - frontend
