@@ -4,10 +4,25 @@ import {
   Table, TableHead, TableHeaderCell, TableBody, TableRow, TableCell, TableFoot, TableFooterCell
 } from '@tremor/react';
 import { useState, useEffect } from 'react';
-import Truck3DLoading from "@/components/Truck3DLoading"
+import Truck3DLoading from '../components/Truck3DLoading'
+
+type Cargo = {
+  cargo_id: number,
+  position: number[],
+  size:  number[]
+}
+
+type Truck = {
+  truck: {
+    id:string;
+    size: number[];
+  };
+  items: Cargo[]
+}
 
 export default function IndexPage() {
-  const [solution, setSolution] = useState([]);
+  const solution_int:Truck[] = []
+  const [solution, setSolution] = useState(solution_int);
 
   useEffect(() => {
     async function fetchData() {
@@ -22,7 +37,20 @@ export default function IndexPage() {
     fetchData();
   },[]);
 
-  const truck = solution[0]
+  let truck:Truck
+  if (solution){
+    truck = solution[0]
+  }else{
+    truck = {
+      truck: {
+        id: 'loading',
+        size: [0,0,0],
+      },
+      items: []
+    }
+  }
+  
+
   return(
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
         <Title>Loading</Title>

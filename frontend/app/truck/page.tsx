@@ -12,16 +12,18 @@ import {
 } from "@tremor/react";
 import { useState, useEffect } from 'react';
 
-export type truck = {
+type Truck = {
     id: number,
+    truck_type: string,
+    max_weight: number,
     length: number,
     width: number,
-    height: number,
-    weight: number
+    height: number
 }
 
 export default function IndexPage() {
-  const [truck, setTruck] = useState([]);
+  const truck_init:Truck[] = []
+  const [trucks, setTruck] = useState(truck_init);
 
   useEffect(() => {
     async function fetchData() {
@@ -57,7 +59,7 @@ export default function IndexPage() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {truck.map((item) => (
+            {trucks.map((item) => (
                 <TableRow key={item.id}>
                   <TableCell>{item.truck_type}</TableCell>
                   <TableCell className="text-right">{item.length}</TableCell>

@@ -3,12 +3,17 @@ services:
   backend:
     image: maheramara/load-optimisation-backend
     restart: unless-stopped
+    build:
+      context: ./backend
     entrypoint: ['/app/scripts/entrypoint.dev.sh']
 
   frontend:
     image: maheramara/load-optimisation-frontend
     restart: unless-stopped
-    command: npm run dev
+    build:
+      context: ./frontend
+      target: runner
+    command: node server.js
     depends_on:
       - backend
 

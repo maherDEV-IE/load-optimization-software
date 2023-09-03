@@ -17,7 +17,7 @@ import {
 import { PlusCircleIcon, EyeIcon, PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from 'react';
 
-export type Cargo = {
+type Cargo = {
     id: number,
     length: number,
     width: number,
@@ -26,7 +26,8 @@ export type Cargo = {
 }
 
 export default function IndexPage() {
-  const [cargo, setCargo] = useState([]);
+  let cargo_init:Cargo[] = []
+  const [cargo, setCargo] = useState(cargo_init);
 
   useEffect(() => {
     async function fetchData() {
