@@ -20,13 +20,10 @@ services:
   nginx:
     image: maheramara/load-optimisation-web
     restart: unless-stopped
+    build:
+      context: ./nginx
     depends_on:
       - backend
       - frontend
-    networks:
-      - default
-      - nginx-proxy-manager_net
-
-networks:
-  nginx-proxy-manager_net:
-    external: true
+    ports:
+      - "80:80"

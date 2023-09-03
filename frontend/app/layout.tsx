@@ -1,6 +1,6 @@
 import './globals.css';
 
-import Nav from './nav';
+import Navbar from './navbar';
 import { Suspense } from 'react';
 
 export const metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en" className="h-full bg-gray-50">
       <body className="h-full">
         <Suspense>
-          <Nav />
+          <Navbar />
         </Suspense>
         {children}
       </body>
