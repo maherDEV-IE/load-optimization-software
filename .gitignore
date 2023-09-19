@@ -21,7 +21,6 @@ dist/
 
 # Ignore Docker-related files
 *.log
-.dockerignore
 
 # Ignore local development files
 .vscode/
