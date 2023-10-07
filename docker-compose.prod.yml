@@ -1,0 +1,37 @@
+version: "3"
+services:
+  backend:
+    image: maheramara/load-optimisation-backend
+    container_name: load-optimisation_backend
+    restart: unless-stopped
+    build:
+      context: ./backend
+    entrypoint: ['/app/scripts/entrypoint.dev.sh']
+
+  frontend:
+    image: maheramara/load-optimisation-frontend
+    container_name: load-optimisation_frontend
+    restart: unless-stopped
+    build:
+      context: ./frontend
+      target: runner
+    command: node server.js
+    depends_on:
+      - backend
+
+  nginx:
+    image: maheramara/load-optimisation-web
+    container_name: load-optimisation_web
+    restart: unless-stopped
+    build:
+      context: ./nginx
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - default
+      - nginx-proxy-manager_net
+
+networks:
+  nginx-proxy-manager_net:
+    external: true
